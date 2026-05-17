@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: laravel-backend
+    runtime: docker
+    dockerfilePath: ./laravel-backend/Dockerfile
+    dockerContext: ./laravel-backend
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: WEBROOT
+        value: /var/www/html/public
+      - key: RUN_SCRIPTS
+        value: 1
+      - key: SKIP_COMPOSER
+        value: 1
+      - key: REAL_IP_HEADER
+        value: 1
+      - key: APP_KEY
+        sync: false
